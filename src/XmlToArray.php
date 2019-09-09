@@ -49,7 +49,7 @@ class XmlToArray
                     $child = $node->childNodes->item($i);
                     $v = self::domNodeToArray($child,$args);
                     if (isset($child->tagName)) {
-                        $t = $child->tagName;
+                        $t = str_replace("sch:", "", $child->tagName);
                         if (!isset($output[$t])) {
                             $output[$t] = [];
                         }
